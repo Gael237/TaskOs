@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskOS - Gestor de Tareas </title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ==========================
+         AUTH SCREEN
+         ========================== -->
+
+<div id="auth-screen" class="screen-active">
+    <div class="auth-container">
+        <header class="auth-header">
+            <div class="logo-mark">T</div>
+            <h1 class="logo-text">TaskOS</h1>
+            <p class="logo-sub">Sistema de gestión personal</p>
+        </header>
+
+        <!-- LOGIN -->
+         <div id="login-panel" class="auth-panel active">
+            <h2 class="panel-title">LOGIN</h2>
+            <div class="field-group">
+                <label class="field-label">User</label>
+                <input type="text" id="login-user" class="field-input" placeholder="tu_usuario" autocomplete="off" />
+            </div>
+            <div class="field-group">
+                <label class="field-label">Password</label>
+                <input type="password" id="login-pass" class="field-input" placeholder="••••••••" />
+            </div>
+            <div id="login-error" class="auth-error"></div>
+            <button class="btn btn-primary btn-full" onclick="App.auth.login()">Enter</button>
+            <p class="auth-swith">¿Aún no tienes cuenata con nosotros? <span class="link" onclick="App.auth.showRegister()">Register</span></p>
+         </div>
+
+         <!-- REGISTER -->
+          <div id="register-panel" class="auth-panel">
+            <h2 class="panel-title">Create account</h2>
+            <div class="field-group">
+                <label class="field-label">Full name</label>
+                <input type="text" id="reg-name" class="field-input" placeholder="your name" />
+            </div>
+            <div class="field-group">
+                <label class="field-label">User</label>
+                <input type="text" id="reg-user" class="field-input" placeholder="tu_usuario" autocomplete="off" />
+            </div>
+            <div class="field-group">
+                <label class="field-label">Password</label>
+                <input type="password" id="reg-pass" class="field-input" placeholder="Min 6 caracters" />
+            </div>
+            <div class="field-group">
+                <label class="field-label">Confirm password</label>
+                <input type="password" id="reg-pass2" class="field-input" placeholder="Repit password" />
+            </div>
+            <div id="reg-error" class="auth-error"></div>
+            <button class="btn btn-primary btn-full" onclick="App.auth.register()">Create account</button>
+            <p class="auth-swith">¿Ya tienes cuenata? <span class="link" onclick="App.auth.showLogin()">login</span></p>
+          </div>
+    </div>
+</div>
+
+<!-- MAIN SCREEN -->
+
+    
+</body>
+</html>
