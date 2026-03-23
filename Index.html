@@ -66,6 +66,80 @@
 </div>
 
 <!-- MAIN SCREEN -->
+ <div id="app-screen" class="screen">
+    <!-- TOPBAR -->
+    <nav class="topbar">
+        <div class="topbar-left">
+            <div class="logo-mark sm">T</div>
+            <span class="topbar-brand">TaskOS</span>
+        </div>
+        <div class="tapbar-nav">
+            <button class="nav-tab active" data-view="sections" onclick="App.ui.switchView('sections')">Apartados</button>
+            <button class="nav-tab" data-view="agenda" onclick="App.ui.switchView('agenda')">Agenda</button>
+        </div>
+        <div class="topbar-right">
+            <button class="icon-btn theme-toggle" onclick="App.ui.toggleTheme()" title="Camnbiar tema">
+                <span class="theme-icon">◐</span>
+            </button>
+            <div class="user-chip">
+                <span id="user-display"></span>
+                <button class="logout-btn" onclick="App.auth.logout()" title="Cerrar sesión">x</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- VISTA: APARTADOS -->
+    <div id="view-sections" class="view active">
+        <div class="view-header">
+            <div>
+                <h2 class="view-title">Mis apartados</h2>
+                <p class="view-sub" id="section-count">0 apartados activos</p>
+            </div>
+            <button class="btn btn-primary" onclick="App.sections.openCreate()">+ Nuevo apartado</button>
+        </div>
+
+        <div id="section-grid" class="section-grid">
+            <!-- Generado por JS-->
+        </div>
+    </div>
+
+    <!-- VISTA: DETALLE DE APARTADO -->
+     <div id="view-detail" class="view">
+        <div class="view-header">
+            <div class="breadcrumb">
+                <span class="link" onclick="App.ui.switchView('sections')">← Apartados</span>
+                <span class="breadcrumb-sep">/</span>
+                <span id="detail-title">-</span>
+            </div>
+            <button class="btn btn-primary" onclick="App.tasks.openCreate">+ Nueva tarea</button>
+        </div>
+
+        <!-- Tabs internas -->
+         <div class="inner-tabs">
+            <button class="inner-tab active" data-tab="tasks" onclick="App.ui.switchTab('tasks')">Tareas</button>
+            <button class="inner-tab" data-tab="calendar" onclick="App.ui.switchTab('calendar')">Calendario</button>
+         </div>
+
+        <!-- Lista de tareas -->
+        <div id="tab-tasks" class="inner-tab-content active">
+            <div id="tasks-pending" class="task-group">
+                <h3 class="task-group-label">Pendientes</h3>
+                <div class="task-list" id="list-pending"></div>
+            </div>
+            <div id="tasks-done" class="task-group">
+                <h3 class="task-group-label">Completadas</h3>
+                <div class="task-list" id="list-done"></div>
+            </div>
+            <div id="tasks-missed" class="task-group">
+                <h3 class="task-group-label"> No entregadas</h3>
+                <div class="task-list" id="list-missed"></div>
+            </div>
+        </div>
+
+        <!-- Calendario -->
+        
+     </div>
+ </div>
 
     
 </body>
