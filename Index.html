@@ -137,9 +137,86 @@
         </div>
 
         <!-- Calendario -->
-        
+        <div id="tab-calendar" class="inner-tab-content">
+            <div class="calendar-wrapper">
+                <div class="calendar-nav">
+                    <button class="icon-btn" onclick="App.calendar.prev()">+</button>
+                    <span id="cal-month-label" class="cal-title"></span>
+                    <button class="icon-btn" onclick="App.calendar.next()"> -> </button>
+                </div>
+                <div class="cal-grid" id="cal-grid"></div>
+            </div>
+        </div>
      </div>
- </div>
+
+    <!-- VISTA: AGENDA -->
+    <div id="view-agenda" class="view">
+        <div class="view-header">
+            <div>
+                <h2 class="view-title"> Agenda Personal </h2>
+                <p class="view-sub" id="agenda-date-label"></p>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-ghost" onclick="App.agenda.clear()">Limpiar agenda</button>
+                <button class="btn btn-primary" onclick="App.agenda.openCreate()">+ Nuevo Evento</button>
+            </div>
+        </div>
+        <div id="agenda-list" class="agenda-list"></div>
+    </div>
+
+ </div><!-- /app-screen -->
+
+ <!-- MODALES -->
+<div id="modal-overlay" class="modal-overlay" onclick="App.modal.closeOnOverlay(event)">
+    <!-- Modal: Crear/editar apartado -->
+    <div id="modal-section" class="modal">
+        <div class="modal-header">
+            <h3 id="modal-section-title" class="modal-title">Nuevo apartado</h3>
+            <button class="icon-btn" onclick="App.modal.close()">x</button>
+        </div>
+        <div class="modal-body">
+            <div class="field-group">
+                <label class="field-label">Descripción (opcional)</label>
+                <textarea id="section-desc-input" class="field-group" rows="2" placeholder="Breve descripción..."></textarea>
+            </div>
+            <div class="field-group">
+                <label class="field-label">Color de etiqueta</label>
+                <div class="color-picker" id="section-color-picker">
+                    <span class="color-dot active" data-color="#D4A853" style="background:#D4A853"></span>
+                    <span class="color-dot" data-color="#6B9E8A" style="background:#6B9E8A"></span>
+                    <span class="color-dot" data-color="#8A7EC2" style="background:#8A7EC2"></span>
+                    <span class="color-dot" data-color="#C27E8A" style="background:#C27E8A"></span>
+                    <span class="color-dot" data-color="#7EA8C2" style="background:#7EA8C2"></span>
+                    <span class="color-dot" data-color="#888" style="background:#888"></span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-ghost" onclick="App.modal.close()">Cancelar</button>
+            <button class="btn btn-primary" onclick="App.sections.save()">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Modal: Crear/Editar tarea -->
+    <div id="modal-task" class="modal modal-wide">
+        <div class="modal-header">
+            <h3 id="modal-task-title" class="modal-title">Nueva tarea</h3>
+            <button class="icon-btn" onclick="App.modal.close()">x</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-grid">
+                <div class="field-label col-span-2">
+                    <label class="field-label">Nombre de la tarea *</label>
+                    <input type="text" id="task-name-input" class="field-input" placeholder="Nombre descriptivo" />
+                </div>
+                <div class="field-group col-span-2">
+                    <label class="field-label">Descripción</label>
+                    <textarea id="task-desc-input" class="field-input" rows="2" placeholder="Detalles de la tarea..."></textarea>
+                </div> <!--Linea 225 de cloude -->
+            </div>
+        </div>
+    </div>
+</div>
 
     
 </body>
