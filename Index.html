@@ -213,9 +213,40 @@
                     <label class="field-label">Descripción</label>
                     <textarea id="task-desc-input" class="field-input" rows="2" placeholder="Detalles de la tarea..."></textarea>
                 </div> <!--Linea 225 de cloude -->
+                <div class="field-group">
+                    <label class="field-label">Fecha de entrega</label>
+                    <input type="date" id="task-date-input" class="field-input" />
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Prioridad</label>
+                    <select id="task-priority-input" class="field-input">
+                        <option value="alta">Alta</option>
+                        <option value="media" selected>Media</option>
+                        <option value="baja">Baja</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Complejidad (1/5)</label>
+                    <input type="range" id="task-complexity-input" min="1" max="5" value="3" class="fiel-range" />
+                    <div class="range-labels"><span>Fácil</span><span id="complexity-val">3</span><span>Difícil</span></div>
+                </div>
+                <div class="field-groups">
+                    <label class="field-label">Tecnologías / Herramientas</label>
+                    <input type="text" id="task-tech-input" class="field-input" placeholder="Ej: Node.js, Figma, SQL" />
+                </div>
+                <div class="field-group col-span-2" id="task-grade-group" style="display:none;">
+                    <label class="field-label">Calificación Obtenida (0/10)</label>
+                    <input type="number" id="task-grade-input" class="field-input" min="0" max="10" step="0.1" placeholder="0.0" />
+                </div>
             </div>
         </div>
+        <div class="modal-footer">
+            <button class="btn btn-ghost" onclick="App.modal.close()">Cancelar</button>
+            <button class="btn btn-primary" onclick="App.tasks.save()">Guardar tarea</button>
+        </div>
     </div>
+
+    <!-- Modal: Cambiar estado de tarea -->
 </div>
 
     
